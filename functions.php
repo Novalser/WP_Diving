@@ -155,7 +155,7 @@ add_action('init', function () {
     'hierarchical'       => false,
     'menu_position'      => null,
     'menu_icon'          => 'https://img.icons8.com/metro/26/000000/book.png',
-    'supports'           => array('title', 'editor')
+    'supports'           => array('title', 'editor', 'thumbnail')
   ));
 
 
@@ -234,6 +234,9 @@ function mainMenu()
 
 
 
+
+
+
 function logo()
 {
 
@@ -254,6 +257,29 @@ function logo()
 
   return $logos['img'];
 }
+
+
+
+
+
+
+function getMainText()
+{
+
+  $args =  array(
+    'orderby'     => 'date',
+    'order'       => 'ASC',
+    'post_type'   => 'mainText',
+    'numberposts' => 1,
+    'thumbnail' => '',
+  );
+
+  return get_posts($args);
+}
+
+
+//var_dump(getMainText());
+
 
 
 
