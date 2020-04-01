@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Мой шаблон страницы
+Template Name:  Шаблон страниц блога
 Template Post Type: post, page, product
 */
 ?>
