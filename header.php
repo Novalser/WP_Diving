@@ -59,20 +59,16 @@
                         <ul class="nav navbar-nav navbar-nav-right">
                             <?php foreach (mainMenu() as $post) :
 
-                                if (is_front_page()) {
+                                if (!is_front_page()) {
 
-                            ?>
-
-                                    <li class="js_nav-item nav-item">
-                                        <a class="nav-item-child nav-item-hover" href="<?php echo $post->post_content; ?>"> <?php echo $post->post_title; ?></a>
+                            ?> <li class="js_nav-item nav-item">
+                                        <a class="nav-item-child nav-item-hover" href="http://daiving/"> <?php echo $post->post_title; ?></a>
                                     </li>
                                 <?php } else { ?>
                                     <li class="js_nav-item nav-item">
-                                        <a class="nav-item-child nav-item-hover" href="http://daiving/"> <?php echo $post->post_title; ?></a>
+                                        <a class="nav-item-child nav-item-hover" href="<?php echo $post->post_content; ?>"> <?php echo $post->post_title; ?></a>
                                     </li>
                                 <?php } ?>
-
-
                             <?php endforeach; ?>
                         </ul>
 

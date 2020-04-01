@@ -167,6 +167,13 @@ add_action('init', function () {
 
 
 
+
+
+
+
+
+
+
   register_post_type('review', array(
     'labels'             => array(
       'name'               => 'Отзывы', // Основное название типа записи
@@ -271,20 +278,16 @@ function getMainText()
     'order'       => 'ASC',
     'post_type'   => 'mainText',
     'numberposts' => 1,
-    'thumbnail' => '',
+
   );
+
+
 
   return get_posts($args);
 }
 
 
-//var_dump(getMainText());
-
-
-
-
-
-
+//var_dump(get_pages());
 
 
 
@@ -304,4 +307,4 @@ function getReview()
 
 
 
-//var_dump(logo());
+//var_dump(the_content());
