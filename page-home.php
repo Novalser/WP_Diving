@@ -46,7 +46,7 @@
 
                         <h4><a href="#"><?php echo $page->post_title; ?></a> <span class="text-uppercase margin-l-20">Management</span></h4>
                         <p><?php echo $page->post_content; ?></p>
-                        <a class="link" href="#">Read More</a>
+                        <a class="link" href="<?php echo $page->guid; ?>">Read More</a>
 
                     </div>
 
