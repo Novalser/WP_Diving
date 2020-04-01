@@ -44,7 +44,7 @@
                             <img class="img-responsive wow fadeIn" src="<?php echo get_template_directory_uri(); ?>/img/thai/04.jpg" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".1s">
                         </div>
 
-                        <h4><a href="#"><?php echo $page->post_title; ?></a> <span class="text-uppercase margin-l-20">Management</span></h4>
+                        <h4><a href="<?php echo $page->guid; ?>"><?php echo $page->post_title; ?></a> <span class="text-uppercase margin-l-20">Management</span></h4>
                         <p><?php echo $page->post_content; ?></p>
                         <a class="link" href="<?php echo $page->guid; ?>">Read More</a>
 
