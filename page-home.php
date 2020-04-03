@@ -72,15 +72,15 @@
 
                 if ($a_count != 1) { ?>
 
-                    <div class="col-sm-4 sm-margin-b-50">
-                        <div class="margin-b-20">
-                            <img class="img-responsive wow fadeIn" src="<?php echo $img; ?>" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".1s">
-                        </div>
+                    <div class="col-sm-4 sm-margin-b-50"> <a href="<?php echo $page->guid; ?>">
+                            <div class="margin-b-20">
+                                <img class="img-responsive wow fadeIn" src="<?php echo $img; ?>" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".1s">
+                            </div>
 
-                        <h4><a href="<?php echo $page->guid; ?>"><?php echo $page->post_title; ?></a> <span class="text-uppercase margin-l-20">Management</span></h4>
-                        <p><?php echo $page->post_content; ?></p>
-                        <a class="link" href="<?php echo $page->guid; ?>">Read More</a>
-
+                            <h4><a href="<?php echo $page->guid; ?>"><?php echo $page->post_title; ?></a> <span class="text-uppercase margin-l-20">Management</span></h4>
+                            <p><?php echo $page->post_content; ?></p>
+                            <a class="link" href="<?php echo $page->guid; ?>">Read More</a>
+                        </a>
                     </div>
 
                 <?php } ?>
