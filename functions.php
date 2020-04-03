@@ -282,12 +282,11 @@ function getMainText()
   );
 
 
-
   return get_posts($args);
 }
 
 
-//var_dump(get_pages());
+//var_dump(get_posts());
 
 
 
@@ -308,3 +307,30 @@ function getReview()
 
 
 //var_dump(the_content());
+
+
+function cwc_youtube($atts)
+{
+  extract(shortcode_atts(array(
+    "value" => '',
+    "width" => '475',
+    "height" => '350',
+    "name" => 'movie',
+    "allowFullScreen" => 'true',
+    "allowScriptAccess" => 'always',
+  ), $atts));
+  return '<object style="height: ' . $height . 'px; width: ' . $width . 'px">
+				<param name="' . $name . '" value="' . $value . '">
+				<param name="allowFullScreen" value="' . $allowFullScreen . '">
+				<param name="allowScriptAccess" value="' . $allowScriptAccess . '">
+				<embed 
+					src="' . $value . '" 
+					type="application/x-shockwave-flash" 
+					allowfullscreen="' . $allowFullScreen . '" 
+					allowScriptAccess="' . $allowScriptAccess . '" 
+					width="' . $width . '" 
+					height="' . $height . '">
+				</embed>
+			</object>';
+}
+add_shortcode("youtube", "cwc_youtube");

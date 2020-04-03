@@ -570,7 +570,7 @@ fieldset[disabled] .btn-theme {
 .promo-block {
     position: relative;
     z-index: 1;
-    background: url(../img/1920x1080/03.jpg) center center no-repeat;
+
     background-size: cover;
     padding: 250px 0 200px
 }

@@ -3,6 +3,26 @@
 
 <!--========== SLIDER ==========-->
 <div class="promo-block">
+
+
+
+    <?php foreach (getMainText() as $post) : ?>
+
+
+        <?php $img = get_the_post_thumbnail_url($post->ID, 'full', true);
+
+        ?>
+
+
+        <style>
+            .promo-block {
+                background: url(<?php echo $img; ?>) center center no-repeat !important;
+            }
+        </style>
+
+    <?php endforeach; ?>
+
+
     <div class="container">
 
         <?php foreach (getMainText() as $post) : ?>
@@ -10,6 +30,9 @@
                 <h1 class="promo-block-title"> <?php echo $post->post_title; ?></h1>
                 <p class="promo-block-text"><?php echo $post->post_content; ?></p>
             </div>
+
+
+
             <a class="js_popup-youtube btn-theme btn-theme-md btn-white-bg text-uppercase" rel="nofollow" href="http://daiving/wp-content/uploads/2020/04/video.webm" title="Intro Video"><i class="btn-icon icon-control-play"></i> Watch Intro Video
 
 
