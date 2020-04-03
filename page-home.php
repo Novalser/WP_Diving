@@ -48,8 +48,16 @@
     <div class="container content-lg">
         <div class="row text-center margin-b-40">
             <div class="col-sm-6 col-sm-offset-3">
-                <h2> Diving, Snorkelling and Boat Trips</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation</p>
+
+                <?php foreach (getblogText() as $post) :
+                    $a_count1 += 1;
+                    if ($a_count1 == 1) { ?>
+
+                        <h2> <?php echo $post->post_title; ?></h2>
+                        <p><?php echo $post->post_content; ?></p>
+                    <?php } ?>
+
+                <?php endforeach; ?>
             </div>
         </div>
         <!--// end row -->
@@ -58,13 +66,15 @@
             <!-- Latest Products -->
             <?php foreach (get_pages() as $page) {
 
+                $img = get_the_post_thumbnail_url($page->ID, 'full', true);
+
                 $a_count += 1;
 
                 if ($a_count != 1) { ?>
 
                     <div class="col-sm-4 sm-margin-b-50">
                         <div class="margin-b-20">
-                            <img class="img-responsive wow fadeIn" src="<?php echo get_template_directory_uri(); ?>/img/thai/04.jpg" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".1s">
+                            <img class="img-responsive wow fadeIn" src="<?php echo $img; ?>" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".1s">
                         </div>
 
                         <h4><a href="<?php echo $page->guid; ?>"><?php echo $page->post_title; ?></a> <span class="text-uppercase margin-l-20">Management</span></h4>
@@ -83,12 +93,23 @@
 
         <div class="container-full-width">
             <div class="row row-space-2">
-                <div class="col-sm-6 sm-margin-b-4">
-                    <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/thai/07.jpg" alt="Image">
-                </div>
-                <div class="col-sm-6">
-                    <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/thai/08.jpg" alt="Image">
-                </div>
+
+                <?php foreach (getblogText() as $post) :
+
+                    $img = get_the_post_thumbnail_url($post->ID, 'full', true);
+
+
+                    $a_count2 += 1;
+                    if ($a_count2 != 1) { ?>
+
+                        <div class="col-sm-6 sm-margin-b-4">
+                            <img class="img-responsive" src="<?php echo $img; ?>" alt="Image">
+                        </div>
+
+                    <?php } ?>
+                <?php endforeach; ?>
+
+
             </div>
             <!--// end row -->
         </div>

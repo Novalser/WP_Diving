@@ -160,7 +160,29 @@ add_action('init', function () {
 
 
 
+  register_post_type('blogText', array(
+    'labels'             => array(
+      'name'               => 'Текст', // Основное название типа записи
+      'singular_name'      => 'Пункт меню', // отдельное название записи типа Book
+      'add_new'            => 'Добавить пункт',
+      'add_new_item'       => 'Добавить новый пункт',
+      'edit_item'          => 'Редактировать пункт',
+      'new_item'           => 'Новый пункт',
+      'view_item'          => 'Посмотреть пункт',
+      'search_items'       => 'Найти пункт',
+      'not_found'          =>  'Пунктов меню не найдено',
+      'not_found_in_trash' => 'В корзине пунктов меню не найдено',
 
+      'menu_name'          => 'Заголовок блога'
+
+    ),
+    'public'             => false,
+    'show_ui'            => true,
+    'hierarchical'       => false,
+    'menu_position'      => null,
+    'menu_icon'          => 'https://img.icons8.com/metro/26/000000/book.png',
+    'supports'           => array('title', 'editor', 'thumbnail')
+  ));
 
 
 
@@ -287,6 +309,30 @@ function getMainText()
 
 
 //var_dump(get_posts());
+
+
+
+
+
+function getblogText()
+{
+
+  $args =  array(
+    'orderby'     => 'date',
+    'order'       => 'ASC',
+    'post_type'   => 'blogText',
+    'numberposts' => 3,
+
+  );
+
+
+  return get_posts($args);
+}
+
+
+
+
+
 
 
 
