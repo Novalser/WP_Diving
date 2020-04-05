@@ -66,6 +66,10 @@
             <!-- Latest Products -->
             <?php foreach (get_pages() as $page) {
 
+
+
+
+
                 $img = get_the_post_thumbnail_url($page->ID, 'full', true);
 
                 $a_count += 1;
@@ -77,7 +81,9 @@
                                 <img class="img-responsive wow fadeIn" src="<?php echo $img; ?>" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".1s">
                             </div>
 
-                            <h4><a href="<?php echo $page->guid; ?>"><?php echo $page->post_title; ?></a> <span class="text-uppercase margin-l-20">Management</span></h4>
+                            <h4><a href="<?php echo $page->guid; ?>"><?php echo $page->post_title; ?></a> <span class="text-uppercase margin-l-20"><?php
+                                                                                                                                                    $autor_review = get_fields($page->ID);
+                                                                                                                                                    echo $autor_review = $autor_review['avtor']; ?></span></h4>
                             <p><?php echo $page->post_content; ?></p>
                             <a class="link" href="<?php echo $page->guid; ?>">Read More</a>
                         </a>
@@ -122,8 +128,8 @@
 <div id="service">
     <div class="bg-color-sky-light" data-auto-height="true">
         <div class="content-lg container">
-            <div class="row row-space-2 margin-b-4">
-                <div class="col-sm-4 sm-margin-b-4">
+            <div class="row row-space-2  margin-b-4">
+                <div class="col-sm-4 service-trans sm-margin-b-4">
                     <div class="service" data-height="height">
                         <div class="service-element">
                             <i class="service-icon icon-chemistry"></i>
@@ -517,7 +523,9 @@
                                 <div class="margin-b-20">
                                     <?php echo $post->post_content; ?>
                                 </div>
-                                <p><span class="fweight-700 color-link">Joh Milner</span>, Metronic Customer</p>
+                                <p><span class="fweight-700 color-link"><?php
+                                                                        $autor_review = get_fields($post->ID);
+                                                                        echo $autor_review = $autor_review['avtor']; ?></span>.</p>
                             </blockquote>
                         </div>
 
@@ -531,50 +539,48 @@
                 <!-- End Swiper Testimonials -->
             </div>
         </div>
+
+
+
+
         <!--// end row -->
 
     </div>
     <!-- End Testimonials -->
 
-    <!-- Contact -->
-    <div id="contact">
-        <!-- Google Map -->
 
-        <!-- End Google Map -->
-    </div>
-    <!-- End Contact -->
     <!--========== END PAGE LAYOUT ==========-->
 
+</div>
 
 
-
-    <?php get_footer(); ?>
-
-
-
-
-
-    <!-- Back To Top -->
-    <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
-
-    <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-    <!-- CORE PLUGINS -->
+<?php get_footer(); ?>
 
 
 
 
 
+<!-- Back To Top -->
+<a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
 
-    <!-- PAGE LEVEL PLUGINS -->
-
-
-
-    <!-- PAGE LEVEL SCRIPTS -->
-
+<!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- CORE PLUGINS -->
 
 
 
-    </body>
-    <!-- END BODY -->
 
-    </html>
+
+
+<!-- PAGE LEVEL PLUGINS -->
+
+
+
+<!-- PAGE LEVEL SCRIPTS -->
+
+
+
+
+</body>
+<!-- END BODY -->
+
+</html>

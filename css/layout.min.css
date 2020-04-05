@@ -770,7 +770,7 @@ fieldset[disabled] .btn-theme {
 }
 
 .header .navbar {
-    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    border-bottom: 0px solid rgba(255, 255, 255, .2);
     transition-duration: .3s;
     transition-property: all;
     transition-timing-function: cubic-bezier(.7, 1, .7, 1)
@@ -1311,7 +1311,8 @@ fieldset[disabled] .btn-theme {
 
 .content-md {
     padding-top: 80px;
-    padding-bottom: 80px
+    padding-bottom: 80px;
+    border-bottom: 2px solid #ffffff8e;
 }
 
 .content-lg {
