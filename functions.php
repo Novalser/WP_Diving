@@ -189,7 +189,29 @@ add_action('init', function () {
 
 
 
+  register_post_type('Gallery', array(
+    'labels'             => array(
+      'name'               => 'Галерея', // Основное название типа записи
+      'singular_name'      => 'Пункт галереи', // отдельное название записи типа Book
+      'add_new'            => 'Добавить пункт',
+      'add_new_item'       => 'Добавить новый пункт',
+      'edit_item'          => 'Редактировать пункт',
+      'new_item'           => 'Новый пункт',
+      'view_item'          => 'Посмотреть пункт',
+      'search_items'       => 'Найти пункт',
+      'not_found'          =>  'Пунктов меню не найдено',
+      'not_found_in_trash' => 'В корзине пунктов меню не найдено',
 
+      'menu_name'          => 'Галерея'
+
+    ),
+    'public'             => false,
+    'show_ui'            => true,
+    'hierarchical'       => false,
+    'menu_position'      => null,
+    'menu_icon'          => 'https://img.icons8.com/metro/26/000000/book.png',
+    'supports'           => array('title', 'thumbnail')
+  ));
 
 
 
@@ -307,11 +329,20 @@ function getMainText()
   );
 
 
+
+
+
   return get_posts($args);
 }
 
 
 //var_dump(get_posts());
+
+
+
+
+
+
 
 
 
@@ -332,6 +363,38 @@ function getblogText()
   return get_posts($args);
 }
 
+
+
+function getGallery()
+{
+
+  $args =  array(
+    'orderby'     => 'date',
+    'order'       => 'ASC',
+    'post_type'   => 'Gallery',
+    'numberposts' => 1,
+
+  );
+
+  $images = [];
+  foreach (get_posts($args) as $post) {
+    $images[] = get_fields($post->ID);
+    //$k++;
+  }
+
+  $image_main = [];
+  foreach ($images[0] as $img) {
+    $image_main[$key] = $img['url'];
+    $key++;
+  }
+
+
+
+
+  return $image_main;
+}
+
+//var_dump(getGallery());
 
 
 
