@@ -84,7 +84,7 @@
                             <h4><a href="<?php echo $page->guid; ?>"><?php echo $page->post_title; ?></a> <span class="text-uppercase margin-l-20"><?php
                                                                                                                                                     $autor_review = get_fields($page->ID);
                                                                                                                                                     echo $autor_review = $autor_review['avtor']; ?></span></h4>
-                            <p><?php echo $page->post_content; ?></p>
+                            <p><?php echo mb_strimwidth($page->post_content, 0, 390); ?></p>
                             <a class="link" href="<?php echo $page->guid; ?>">Read More</a>
                         </a>
                     </div>

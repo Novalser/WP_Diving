@@ -335,7 +335,7 @@ h4 {
 }
 
 .section-seperator {
-    border-bottom: 1px solid #edf0f2
+    border-top: 2px solid #edf0f2
 }
 
 .content-wrapper-link {
@@ -1312,7 +1312,7 @@ fieldset[disabled] .btn-theme {
 .content-md {
     padding-top: 80px;
     padding-bottom: 80px;
-    border-bottom: 2px solid #ffffff8e;
+
 }
 
 .content-lg {
