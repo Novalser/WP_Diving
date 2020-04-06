@@ -2038,6 +2038,14 @@ pre code {
 
 }
 
+
+
+.padding_top {
+    padding-top: 150px !important;
+
+}
+
+
 .col-lg-1,
 .col-lg-10,
 .col-lg-11,
@@ -2363,6 +2371,15 @@ pre code {
     .col-sm-4 {
         width: 33.33333333%
     }
+
+
+    .role_main {
+        width: 100%
+    }
+
+
+
+
 
     .col-sm-3 {
         width: 25%

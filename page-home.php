@@ -231,6 +231,13 @@
                 <!-- Work -->
                 <div class="work work-popup-trigger">
                     <div class="work-overlay">
+
+
+
+                        <?php $gall = getGallery(); ?>
+
+                        <?php echo $gall['izobrazhenie']; ?>
+
                         <img class="full-width img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/thai/01.jpg" alt="Portfolio Image">
                     </div>
                     <div class="work-popup-overlay">
@@ -557,7 +564,7 @@
 <?php get_footer(); ?>
 
 
-
+<div id="contact"></div>
 
 
 <!-- Back To Top -->

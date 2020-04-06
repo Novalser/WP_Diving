@@ -272,6 +272,21 @@ add_action('init', function () {
 });
 
 
+function root_acf_format_value($value, $post_id, $field)
+{
+
+  $value = do_shortcode($value);
+
+  return $value;
+}
+
+add_filter('acf/format_value/type=textarea', 'root_acf_format_value', 10, 3);
+
+
+
+
+
+
 
 function mainMenu()
 {
@@ -382,16 +397,16 @@ function getGallery()
     //$k++;
   }
 
-  $image_main = [];
-  foreach ($images[0] as $img) {
-    $image_main[$key] = $img['url'];
-    $key++;
-  }
+  // $image_main = [];
+  //foreach ($images[0] as $img) {
+  //   $image_main[$key] = $img['url'];
+  //  $key++;
+  // }
 
 
 
 
-  return $image_main;
+  return $images;
 }
 
 //var_dump(getGallery());
